@@ -59,7 +59,7 @@
 
 ---
 
-### Установка зависимостей в Ubuntu/Debian:
+## Установка зависимостей в Ubuntu/Debian:
 ```bash
 sudo apt update
 sudo apt install build-essential check lcov
