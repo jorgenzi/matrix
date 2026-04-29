@@ -64,6 +64,8 @@
 sudo apt update
 sudo apt install build-essential check lcov
 
+---
+
 ## 🚀 Установка и сборка
 
 ### 1. Клонируйте репозиторий
@@ -72,7 +74,6 @@ git clone git@github.com:your-username/matrix-lib.git
 cd matrix-lib
 
 ---
-
 
 ## Справочник по API
 Основная структура
