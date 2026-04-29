@@ -56,7 +56,7 @@
 
 ---
 
-## 🛠 Требования
+## Требования
 
 - **Компилятор**: GCC с поддержкой стандарта C11 (`gcc -std=c11`)
 - **Инструменты сборки**: `make`, `ar`
@@ -67,3 +67,54 @@
 ```bash
 sudo apt update
 sudo apt install build-essential check lcov
+
+## Установка и сборка
+1. Клонируйте репозиторий
+```bash
+git clone git@github.com:your-username/matrix-lib.git
+cd matrix-lib
+
+2. Соберите статическую библиотеку
+```bash
+make all
+# Результат: libmatrix.a
+
+3. Очистка артефактов сборки
+```bash
+make clean
+
+4. Пересборка + тесты одной командой
+```bash
+make rebuild
+
+
+## Справочник по API
+Основная структура
+'''c
+typedef struct matrix_struct {
+    double **matrix;  // Двумерный массив значений
+    int rows;         // Количество строк
+    int columns;      // Количество столбцов
+} matrix_t;
+
+
+## Коды ошибок
+'''c
+#define OK 0           // Операция успешна
+#define ERROR 1        // Некорректные аргументы / ошибка выделения памяти
+#define CALC_ERROR 2   // Вычисление невозможно (несовпадение размеров, вырожденная матрица)
+
+#define SUCCESS 1      // Для сравнения: матрицы равны
+#define FAILURE 0      // Для сравнения: матрицы различаются
+
+#define EPSILON 1e-6   // Допустимая погрешность при сравнении чисел с плавающей точкой
+
+
+## Тестирование
+'''bash
+make test
+# Выполняет: ./test_suite
+
+Структура тестов:
+Тесты находятся в файле test/test_matrix.c и используют фреймворк Check.
+
