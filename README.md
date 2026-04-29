@@ -66,18 +66,30 @@ sudo apt install build-essential check lcov
 
 ---
 
-## 🚀 Установка и сборка
-
-### 1. Клонируйте репозиторий
+## Установка и сборка
+1. Клонируйте репозиторий
 ```bash
 git clone git@github.com:your-username/matrix-lib.git
 cd matrix-lib
+
+2. Соберите статическую библиотеку
+```bash
+make all
+# Результат: libmatrix.a
+
+3. Очистка артефактов сборки
+```bash
+make clean
+
+4. Пересборка + тесты одной командой
+```bash
+make rebuild
 
 ---
 
 ## Справочник по API
 Основная структура
-'''c
+```c
 typedef struct matrix_struct {
     double **matrix;  // Двумерный массив значений
     int rows;         // Количество строк
@@ -86,7 +98,7 @@ typedef struct matrix_struct {
 
 
 ## Коды ошибок
-'''c
+```c
 #define OK 0           // Операция успешна
 #define ERROR 1        // Некорректные аргументы / ошибка выделения памяти
 #define CALC_ERROR 2   // Вычисление невозможно (несовпадение размеров, вырожденная матрица)
@@ -98,7 +110,7 @@ typedef struct matrix_struct {
 
 
 ## Тестирование
-'''bash
+```bash
 make test
 # Выполняет: ./test_suite
 
