@@ -63,6 +63,8 @@
 - **Тестирование** (опционально): `libcheck` (пакет `check`)
 - **Отчёты о покрытии** (опционально): `lcov`, `genhtml`
 
+---
+
 ### Установка зависимостей в Ubuntu/Debian:
 ```bash
 sudo apt update
@@ -87,6 +89,7 @@ make clean
 ```bash
 make rebuild
 
+---
 
 ## Справочник по API
 Основная структура
