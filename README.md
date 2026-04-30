@@ -66,7 +66,7 @@
 git clone git@github.com:your-username/matrix-lib.git
 cd matrix-lib
 
-### 2. Соберите статическую библиотеку
+2. Соберите статическую библиотеку
 ```bash
 make all
 # Результат: libmatrix.a
